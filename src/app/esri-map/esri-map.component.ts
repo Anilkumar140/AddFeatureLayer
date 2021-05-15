@@ -96,7 +96,20 @@ export class EsriMapComponent implements OnInit, OnDestroy {
       };
 
       const map: esri.Map = new EsriMap(mapProperties);
-     
+      const citiesLayer = new FeatureLayer({
+        url: "http://g-aset.dbkl.gov.my/gasset1/rest/services/ZAC/PARLIMEN_KL/MapServer/0"
+      });
+      map.add(citiesLayer);
+
+      // for multiple feaure layer
+      // const citiesLayer1 = new FeatureLayer({
+      //   url: "http://g-aset.dbkl.gov.my/gasset1/rest/services/ZAC/SEGAMBUT/MapServer/0"
+      // });
+      // map.add(citiesLayer1);
+      // const citiesLayer2 = new FeatureLayer({
+      //   url: "http://g-aset.dbkl.gov.my/gasset1/rest/services/ZAC/SEGAMBUT/MapServer/1"
+      // });
+      // map.add(citiesLayer2);
       // Initialize the MapView
       const mapViewProperties: esri.MapViewProperties = {
         container: this.mapViewEl.nativeElement,
