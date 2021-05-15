@@ -1,0 +1,4 @@
+ const citiesLayer = new FeatureLayer({
+        url: "http://g-aset.dbkl.gov.my/gasset1/rest/services/ZAC/PARLIMEN_KL/MapServer/0"
+      });
+      map.add(citiesLayer);
